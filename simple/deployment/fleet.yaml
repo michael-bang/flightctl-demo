@@ -1,0 +1,22 @@
+
+apiVersion: v1alpha1
+kind: Fleet
+metadata:
+  name: simple-fleet
+spec:
+  selector:
+    matchLabels:
+      fleet: simple-fleet
+  template:
+    spec:
+      os:
+        image: qquay.io/mbang1/centos-bootc-flightctl:v2
+      config:
+        - name: motd-update
+          inline:
+            - path: "/etc/motd"
+              content: "This system is managed by flightctl."
+              mode: 0644
+      systemd:
+        matchPatterns:
+          - "flightctl-agent.service"

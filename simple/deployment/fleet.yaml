@@ -10,7 +10,7 @@ spec:
   template:
     spec:
       os:
-        image: qquay.io/mbang1/centos-bootc-flightctl:v2
+        image: quay.io/mbang1/centos-bootc-flightctl:v2
       config:
         - name: motd-update
           inline:

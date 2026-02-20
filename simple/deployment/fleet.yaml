@@ -23,7 +23,6 @@ spec:
       applications:
         - name: nginx-server
           appType: quadlet
-          runAs: flightctl
           inline:
             - path: nginx.container
               content: |
@@ -32,7 +31,7 @@ spec:
 
                 [Container]
                 Image=docker.io/nginx:1.29
-                PublishPort=8081:80
+                PublishPort=8080:80
 
                 [Service]
                 Restart=always

@@ -2,7 +2,7 @@
 apiVersion: v1alpha1
 kind: Fleet
 metadata:
-  name: simple-fleet
+  name: my-fleet
 spec:
   selector:
     matchLabels:
@@ -10,7 +10,7 @@ spec:
   template:
     spec:
       os:
-        image: quay.io/mbang1/centos-bootc-flightctl:v2
+        image: quay.io/mbang1/centos-bootc-cncf:v1
       config:
         - name: motd-update
           inline:

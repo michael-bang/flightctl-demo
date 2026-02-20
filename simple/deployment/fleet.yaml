@@ -20,3 +20,23 @@ spec:
       systemd:
         matchPatterns:
           - "flightctl-agent.service"
+      applications:
+        - name: nginx-server
+          appType: quadlet
+          runAs: flightctl
+          inline:
+            - path: nginx.container
+              content: |
+                [Unit]
+                Description=Nginx web server
+
+                [Container]
+                Image=docker.io/nginx:1.29
+                PublishPort=8080:80
+
+                [Service]
+                Restart=always
+
+                [Install]
+                WantedBy=default.target
+                

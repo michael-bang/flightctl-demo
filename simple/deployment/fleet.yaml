@@ -1,5 +1,5 @@
 
-apiVersion: v1alpha1
+apiVersion: v1beta1
 kind: Fleet
 metadata:
   name: my-fleet
@@ -23,6 +23,7 @@ spec:
       applications:
         - name: nginx-server
           appType: quadlet
+          runAs: flightctl
           inline:
             - path: nginx.container
               content: |

@@ -1,0 +1,21 @@
+apiVersion: v1beta1
+kind: Fleet
+metadata:
+  name: microshift
+spec:
+  selector:
+    matchLabels:
+      fleet: microshift
+  template:
+    spec:
+      os:
+        image: quay.io/mbang1/microshift-4.21-bootc:v1
+      config:
+        - name: motd-update
+          inline:
+            - path: "/etc/motd"
+              content: "This system is managed by flightctl and run Microshift."
+              mode: 0644
+      systemd:
+        matchPatterns:
+          - "flightctl-agent.service"

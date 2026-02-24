@@ -38,4 +38,22 @@ spec:
 
                 [Install]
                 WantedBy=default.target
-                
+
+        - name: nginx-server2
+          appType: quadlet
+          runAs: flightctl
+          inline:
+            - path: nginx2.container
+              content: |
+                [Unit]
+                Description=Nginx web server
+
+                [Container]
+                Image=docker.io/nginx:1.29
+                PublishPort=8081:80
+
+                [Service]
+                Restart=always
+
+                [Install]
+                WantedBy=default.target

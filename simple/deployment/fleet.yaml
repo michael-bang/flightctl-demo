@@ -10,7 +10,7 @@ spec:
   template:
     spec:
       os:
-        image: quay.io/mbang1/centos-bootc-cncf:v1
+        image: quay.io/mbang1/centos-bootc:v1
       config:
         - name: motd-update
           inline:

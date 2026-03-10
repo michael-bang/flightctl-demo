@@ -20,7 +20,7 @@ spec:
         - name: test-file
           secretRef:
             name: test-file
-            namespace: mbang
+            nameSpace: mbang
             mountPath: /var/test-file
       systemd:
         matchPatterns:

@@ -17,6 +17,11 @@ spec:
             - path: "/etc/motd"
               content: "This system is managed by flightctl."
               mode: 0644
+        - name: test-file
+          secretRef:
+            name: test-file
+            namespace: mbang
+            mountPath: /var/test-file
       systemd:
         matchPatterns:
           - "flightctl-agent.service"

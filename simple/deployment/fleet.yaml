@@ -15,7 +15,7 @@ spec:
         - name: motd-update
           inline:
             - path: "/etc/motd"
-              content: "This system is managed by flightctl."
+              content: "This system is managed by flightctl. "
               mode: 0644
         - name: test-file
           secretRef:

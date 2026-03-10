@@ -20,8 +20,8 @@ spec:
         - name: test-file
           secretRef:
             name: test-file
-            nameSpace: mbang
-            mountPath: /var/test-file
+            namespace: mbang
+            mountpath: /var/test-file
       systemd:
         matchPatterns:
           - "flightctl-agent.service"

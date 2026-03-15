@@ -22,6 +22,12 @@ spec:
             name: test-file
             namespace: mbang
             mountPath: /var/testfile
+        - name: nginx-content
+          configType: GitConfigProviderSpec
+          gitRef:  
+            repository: mbang
+            targetRevision: main
+            path: /configuration
       systemd:
         matchPatterns:
           - "flightctl-agent.service"

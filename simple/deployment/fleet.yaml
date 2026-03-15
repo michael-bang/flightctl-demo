@@ -43,6 +43,7 @@ spec:
                 [Container]
                 Image=docker.io/nginx:1.29
                 PublishPort=8080:80
+                Volume=/var/www:/usr/share/nginx/html:Z
 
                 [Service]
                 Restart=always
@@ -62,7 +63,6 @@ spec:
                 [Container]
                 Image=docker.io/nginx:1.29
                 PublishPort=8081:80
-                Volume=/var/www:/usr/share/nginx/html:Z
 
                 [Service]
                 Restart=always

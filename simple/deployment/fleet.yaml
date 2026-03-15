@@ -27,7 +27,7 @@ spec:
           gitRef:  
             repository: fleets
             targetRevision: main
-            path: /configuration
+            path: /configuration/blue
       systemd:
         matchPatterns:
           - "flightctl-agent.service"

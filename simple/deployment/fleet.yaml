@@ -27,7 +27,7 @@ spec:
           gitRef:  
             repository: fleets
             targetRevision: main
-            path: /configuration/{ metadata.labels.store }
+            path: /configuration/{{ .metadata.labels.store }}
       systemd:
         matchPatterns:
           - "flightctl-agent.service"
